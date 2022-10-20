@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700|Mr+Dafoe|Roboto:400,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.8.2/dist/sweetalert2.all.min.js"
+    integrity="sha256-VkcwHXtZS2ZHfHSFSP8r1AzueZi37jGMPeHv4OfV1Cg=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/416fea9e90.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <script src="js/scripts.js"></script>
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+</head>
+
+<body style="overflow: auto;">
+  <div id="about-bg" class="position-fixed vh-100 vw-100"></div>
+  <nav class="navbar navbar-expand-md navbar-dark align-content-center">
+    <a class="navbar-brand" href="index.html">
+      <img id="logo" src="assets/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon p-0 m-0"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav text-right pr-2">
+        <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Контакти</i></a></li>
+        <li id="cart" class="nav-item ml-4"><a href="cart.html" class="nav-link"><span id="cart-num"
+              class="mr-2 font-weight-bold"></span><i class="fas fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <form action="" method="post">
+  <div class="container pt-4 d-flex flex-wrap justify-content-center" style="max-width: 500px;">
+    <div class="card mx-auto mb-3 text-dark" style="width: 100%;">
+      <div class="card-body w-100">
+        <h3 class="font-weight-bold text-center">Кошик</h3>
+        <div id="cart-items" class="lead mt-5 mb-4">
+          <table class="table table-borderless table-sm text-dark">
+            <tbody id="insertItems" name="Name">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        <table class="table table-borderless table-sm m-0">
+          <tbody>
+            <tr>
+              <th scope="row">Сума</th>
+              <td class="text-right"><span id="total-amount"> 0.00</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+</form>
+      <button class="btn btn-info text-center lead m-3" id="testing" onclick="window.history.back()"><a><i
+            class="fas fa-arrow-circle-left mr-3"></i>Назад</a></button>
+      <button id="clear-cart" onclick="localStorage.removeItem('order'); location.reload()" class="btn btn-danger"><i
+          class="fas fa-times-circle mr-3"></i>Очистити </button>
+      <button type="button" class="btn btn-primary text-center lead m-3" id="checkout" onclick="location.assign('checkout.html')">Далі<a
+          href="#main"><i class="fas fa-arrow-circle-right ml-3"></i></a></button>
+    </div>
+  </div>
+
+</body>
+
+</html>

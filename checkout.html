@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доставка</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700|Mr+Dafoe|Roboto:400,700&display=swap"
+    rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.8.2/dist/sweetalert2.all.min.js"
+    integrity="sha256-VkcwHXtZS2ZHfHSFSP8r1AzueZi37jGMPeHv4OfV1Cg=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/416fea9e90.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <script src="js/scripts.js"></script>
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+</head>
+<body style="overflow: auto;">
+  <div id="about-bg" class="position-fixed vh-100 vw-100"></div>
+  <nav class="navbar navbar-expand-md navbar-dark align-content-center">
+    <a class="navbar-brand" href="index.html">
+      <img id="logo" src="assets/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon p-0 m-0"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav text-right pr-2">
+        <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Контакти</i></a></li>
+        <li id="cart" class="nav-item ml-4"><a href="cart.html" class="nav-link"><span id="cart-num"
+              class="mr-2 font-weight-bold"></span><i class="fas fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card mx-auto text-dark" style="max-width: 500px;" id="pickup-option">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Оберіть варіант доставки</h3>
+        <table class="table mx-auto table-sm table-borderless">
+          <tbody>
+            <tr>
+              <td class="w-75 text-left pl-5"><label for="deliver">Доставити за адресою</label></td>
+              <td class="w-25"><input class="ml-3" type="radio" id="deliver" name="pickup-option"></td>
+            </tr>
+            <tr>
+              <td class="w-75 text-left pl-5"><label for="pickup">Забрати у нас</label></td>
+              <td class="w-25"><input class="ml-3" type="radio" id="pickup" name="pickup-option"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer text-center">
+        <p class="text-center text-danger" id="error2"></p>
+        <button class="btn btn-primary" id="delivery">Далі <i class="fas fa-arrow-right ml-3"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="pick-address" class="container mt-0" style="display: none;">
+    <div class="jumbotron w-100 mx-auto bg-transparent text-center pt-0 mt-0">
+      <h1 id="location" class="font-weight-bold">Тут ви можете нас знайти</h1>
+      <div class="container-fluid p-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1369.5621759141836!2d32.6259065!3d46.6440589!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c41aac2eeaa32f%3A0xb9ab3b277f6eb9bb!2z0KXQtdGA0YHQvtC90YHRjNC60LjQuSDQv9C-0LvRltGC0LXRhdC90ZbRh9C90LjQuSDRhNCw0YXQvtCy0LjQuSDQutC-0LvQtdC00LYg0JTQtdGA0LbQsNCy0L3QvtCz0L4g0YPQvWnQstC10YDRgdC40YLQtdGC0YMgwqvQntC00LXRgdGM0LrQsCDQv9C-0Ltp0YLQtdGF0L1p0LrQsMK7!5e0!3m2!1sen!2sua!4v1649364605219!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <button type="button" class="btn btn-success mt-4 place-order">Розмістити замовлення</button>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="deliver-address" style="display: none; max-width: 500px;">
+    <h3 class="text-center font-weight-bold">Введіть вашу адресу</h3>
+    <form class="text-center place-order">
+      <input required type="text" id="address" class="d-block m-3 btn btn-light w-100 mx-auto text-left" placeholder="Адреса">
+      <input required type="text" id="city" class="d-block w-100 m-3 btn btn-light mx-auto text-left" placeholder="Місто">
+      <input required type="text" id="phone" class="d-block w-100 m-3 btn btn-light mx-auto text-left" placeholder="Ваш мобільний телефон">
+      <button type="submit" class="btn btn-success mt-4">Розмістити замовлення</button>
+    </form>
+  </div>
+</body>
+
+</html>

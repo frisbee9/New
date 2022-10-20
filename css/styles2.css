@@ -1,0 +1,81 @@
+body {
+    position: sticky;
+    background-color: rgb(0, 4, 214);
+    font-family: Montserrat;
+    color: rgb(255, 255, 255, 0.9);
+    height: 100%;
+    overflow: hidden;
+align-items: center;
+}
+
+.main {
+align-items: center;
+text-align: center;
+
+}
+h1 { 
+
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px;
+    color: rgb(255, 255, 255, 0.8);
+    align-items: center;
+ }
+
+table {
+	margin: 5px;
+}
+table td, table th {
+	padding: 10px;
+}
+table th {
+	font-weight: bold;
+}
+
+
+a {
+	color: #2B7CD3;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.tabl {
+	border-collapse: collapse;
+	margin: auto;
+   
+}
+.tabl td, .tabl th {
+	border: 1px solid #185ABD;
+}
+.tabl th { background-color: #71B9FF; }
+
+
+.tabl_items {
+	border-collapse: collapse;
+	margin: auto;
+    
+}
+.tabl_items td, .tabl_items th {
+	border: 1px solid #b7b6b6;
+}
+.tabl_items td { 
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+#about-bg {
+    background-image: url("../assets/pizzeria.jpg");
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -100;
+    background-color: rgb(85, 85, 85);
+  }

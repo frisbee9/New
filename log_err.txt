@@ -1,0 +1,5 @@
+2022-04-29 10:45:01 - Ошибка MySQL: 1146: Table 'pizza.orders' doesn't exist (INSERT INTO `orders` SET 
+		`address`='', 
+		`city`='', 
+		`phone` = '', 
+		`price` = '5140' )
